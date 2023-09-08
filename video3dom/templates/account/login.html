@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div id="login">
+        <!-- Title -->
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="text-center mb-7">
+                <h3 class="mb-0">Connexion a 3dom</h3>
+                <p>Connectez-pous pour gérer votre compte.</p>
+            </div>
+            <!-- End Title -->
+
+            <div class="js-form-message mb-4">
+            {% if form.errors %}
+                    {{ form.errors.email }}
+                    {{ form.errors.password1 }}
+                    {{ form.errors.password2 }}
+            {% endif %}
+            </div>
+
+            <!-- Input Group -->
+            <div class="js-form-message mb-4">
+                <label class="input-label">Email</label>
+                <div class="input-group input-group-sm mb-2">
+                    <input type="email" class="form-control" name="login" id="id_login" placeholder="Email"
+                           aria-label="Email" required
+                    data-msg="Please enter a valid email address.">
+                </div>
+            </div>
+            <!-- End Input Group -->
+
+            <!-- Input Group -->
+            <div class="js-form-message mb-3">
+                <label class="input-label">Mot de passe</label>
+                <div class="input-group input-group-sm mb-2">
+                    <input type="password" class="form-control" name="password" id="id_password"
+                           placeholder="Mot de passe" aria-label="Password" required
+                    data-msg="Your password is invalid. Please try again.">
+                </div>
+            </div>
+            <!-- End Input Group -->
+
+            <div class="d-flex justify-content-end mb-4">
+                <a class="js-animation-link small link-underline" href="javascript:;"
+                    data-hs-show-animation-options='{
+                        "targetSelector": "#forgotPassword",
+                        "groupName": "idForm"
+                    }'>Mot de passe oublié?
+                </a>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-sm btn-primary btn-block">Connexion</button>
+            </div>
+        </form>
+
+        <div class="text-center mb-3">
+            <span class="divider divider-xs divider-text">OU</span>
+        </div>
+
+        <a class="btn btn-sm btn-ghost-secondary btn-block mb-2" href="#">
+            <span class="d-flex justify-content-center align-items-center">
+                <i class="fab fa-google mr-2"></i>
+                Connexion avec Google
+            </span>
+        </a>
+
+        <div class="text-center">
+            <span class="small text-muted">Pas encore de compte?</span>
+            <a class="js-animation-link small font-weight-bold" href="javascript:;"
+                data-hs-show-animation-options='{
+                    "targetSelector": "#signup",
+                    "groupName": "idForm"
+                }'>Enregistrement
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
