@@ -45,10 +45,17 @@ class Creator(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField(blank=True, null=True)
-    created_original = models.DateTimeField(auto_now_add=True)
+    # created_in_3dom : heure a laquelle le Bot recupere les infos sur Youtube
+    created_in_3dom = models.DateTimeField(auto_now_add=True)
     uuid = models.UUIDField(default=uuid.uuid4)
-    image = models.ImageField(upload_to='covers')
-    file = models.FileField(upload_to='movies')
+    image = models.ImageField(upload_to='covers', blank=True, null=True)
+
+    # ---> Infos sur la Video
+    file = models.FileField(upload_to='movies', blank=True, null=True)
+    # channel_external_id : Exemple .. Id sur Youtube
+    channel_external_id = models.CharField(max_length=40, blank=True, null=True)
+    file_url = models.URLField(blank=True, null=True)
+
     creator = models.ForeignKey(Creator, on_delete=models.CASCADE)
     is_published = models.BooleanField(default=False)
     date_published = models.DateTimeField(blank=True, null=True)

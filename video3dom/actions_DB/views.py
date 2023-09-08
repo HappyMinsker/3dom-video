@@ -8,8 +8,8 @@ from django.core import serializers
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 
-from video3dom.video3domapp.models import Creator
-
+from video3domapp.models import Creator
+# C:\Users\OMEN\PycharmProjects\3dom-video\video3dom
 
 # Create your views here.
 
@@ -25,7 +25,7 @@ def json_export(request):
         out.write(mast_point)
     messages.info(request, "Export des data en base vers le fichier json effectuée.")
 
-    return redirect('')
+    return redirect("video3domapp:Home")
 
 
 @staff_member_required(login_url="/account/my-login")
@@ -36,7 +36,7 @@ def json_save(request):
     dir_db_file_dest = os.path.join(settings.BASE_DIR, 'media/json_files', f'db_creators_{timestr}.json')
     shutil.copyfile(dir_db_file_src, dir_db_file_dest)
     messages.info(request, "Duplication du fichier json effectuée.")
-    return redirect('')
+    return redirect("video3domapp:Home")
 
 
 @staff_member_required(login_url="/account/my-login")
@@ -44,4 +44,4 @@ def json_clean(request):
     json_file_name = os.path.join(settings.BASE_DIR, 'media/json_files', 'db_creators.json')
     os.remove(json_file_name)
 
-    return redirect('')
+    return redirect("video3domapp:Home")

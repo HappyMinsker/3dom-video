@@ -1,0 +1,54 @@
+[
+  {
+    "model": "video3domapp.creator",
+    "pk": 1,
+    "fields": {
+      "name": "Chaîne officielle TVL",
+      "channel": "youtube",
+      "category": "political",
+      "youtube_name": "@CHAINETVL-TVLibertes",
+      "youtube_id": null,
+      "odysee_name": null,
+      "odysee_id": null
+    }
+  },
+  {
+    "model": "video3domapp.creator",
+    "pk": 2,
+    "fields": {
+      "name": "MoneyRadar",
+      "channel": "youtube",
+      "category": "economical",
+      "youtube_name": "@MoneyRadar",
+      "youtube_id": null,
+      "odysee_name": null,
+      "odysee_id": null
+    }
+  },
+  {
+    "model": "video3domapp.creator",
+    "pk": 3,
+    "fields": {
+      "name": "Thinkerview",
+      "channel": "youtube",
+      "category": "political",
+      "youtube_name": "@thinkerview",
+      "youtube_id": null,
+      "odysee_name": null,
+      "odysee_id": null
+    }
+  },
+  {
+    "model": "video3domapp.creator",
+    "pk": 4,
+    "fields": {
+      "name": "Aldo Sterone",
+      "channel": "youtube",
+      "category": "political",
+      "youtube_name": "@AldoSterone111",
+      "youtube_id": null,
+      "odysee_name": null,
+      "odysee_id": null
+    }
+  }
+]
