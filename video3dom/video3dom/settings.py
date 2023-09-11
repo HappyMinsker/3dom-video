@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'actions_DB',
     'video3domapp',
-    'video_youtube',
+    'video3importvideoapp',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

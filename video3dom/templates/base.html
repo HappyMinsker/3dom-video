@@ -62,26 +62,9 @@
                 </button>
                 <!-- End Responsive Toggle Button -->
 
-                <!-- Unfold (Sidebar) -->
-                <div class="hs-unfold d-none d-xl-block">
-                    <a class="js-hs-unfold-invoker mr-4" href="javascript:;"
-                       data-hs-unfold-options='{
-                                "target": "#sidebarContent",
-                                "type": "css-animation",
-                                "animationIn": "fadeInLeft",
-                                "animationOut": "fadeOutLeft",
-                                "hasOverlay": "rgba(55, 125, 255, 0.1)",
-                                "smartPositionOff": true
-                            }'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" style="fill: #97979f;">
-                            <path d="M0 13L0 11.4 16 11.4 16 13 0 13ZM0 5.7L16 5.7 16 7.3 0 7.3 0 5.7ZM0 0L16 0 16 1.6 0 1.6 0 0Z"></path>
-                        </svg>
-                    </a>
-                </div>
-                <!-- End Unfold (Sidebar) -->
 
                 <!-- Logo -->
-                <a class="navbar-brand w-auto mr-xl-5 mr-wd-8" href="../home/index.html" aria-label="Vodi">
+                <a class="navbar-brand w-auto mr-xl-5 mr-wd-8" href="{% url 'video3domapp:Home' %}" aria-label="Vodi">
                     <!--                        <svg version="1.1" width="103" height="40px">-->
                     <!--                            <linearGradient id="vodi-gr" x1="0%" y1="0%" x2="100%" y2="0%">-->
                     <!--                                <stop offset="0" style="stop-color:#2A4999"></stop>-->
@@ -164,8 +147,8 @@
                                             <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
                                                 <a href="../home/index.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="https://placehold.it/260x260" alt="Image Description">
-                                                    <div class="h-g1-primary font-size-13 font-weight-bold">Home v1
+                                                         src="{% static 'assets/img/mode/Mode1.jpg' %}" alt="Image Description">
+                                                    <div class="h-g1-primary font-size-13 font-weight-bold">Classique
                                                     </div>
                                                 </a>
                                             </div>
@@ -173,10 +156,9 @@
                                             <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
                                                 <a href="../home/home-v9.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="https://placehold.it/260x260" alt="Image Description">
+                                                         src="{% static 'assets/img/mode/Mode2.jpg' %}" alt="Image Description">
                                                     <div class="h-g1-primary font-size-13 font-weight-bold">
-                                                        Vodi Tube
-                                                        <div>Home v9 ( Light )</div>
+                                                        Créateurs
                                                     </div>
                                                 </a>
                                             </div>
@@ -184,10 +166,9 @@
                                             <div class="col-md-6 col-lg-3 col-xl">
                                                 <a href="../home/home-v10.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="https://placehold.it/260x260" alt="Image Description">
+                                                         src="{% static 'assets/img/mode/Mode3.jpg' %}" alt="Image Description">
                                                     <div class="h-g1-primary font-size-13 font-weight-bold">
-                                                        Vodi Tube
-                                                        <div>Home v10 ( Dark )</div>
+                                                        Dissident
                                                     </div>
                                                 </a>
                                             </div>
@@ -257,72 +238,18 @@
                                                     </div>
 
                                                     <ul class="column-count-2 v2 list-unstyled mb-0">
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Action</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Adventure</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Animation</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Comedy</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Crime</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Drama</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Fantacy</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Horror</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Mystrey</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Romance</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Adventure</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Animation</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Comedy</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Crime</a>
-                                                        </li>
-                                                        <li class="py-1">
-                                                            <a class="h-b-primary  py-1 font-size-14"
-                                                               href="../single-movies/single-movies-v2.html">Drama</a>
-                                                        </li>
+                                                        {% for creator in creators %}
+                                                            <li class="py-1">
+                                                                <a class="h-b-primary  py-1 font-size-14"
+                                                                   href="../single-movies/single-movies-v2.html">{{ creator.name }}</a>
+                                                            </li>
+                                                        {% endfor %}
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md px-lg-5 mb-4 mb-md-0 dark">
                                                     <div class="font-size-14 text-dark font-weight-bold mb-3">
-                                                        Movie Trailer
+                                                        Présentation de 3dom
                                                     </div>
 
                                                     <div class="product position-relative mb-3">
@@ -358,7 +285,7 @@
                                 <a id="blogMegaMenu"
                                    class="hs-mega-menu-invoker nav-link nav-link-toggle font-secondary"
                                    href="javascript:;" aria-haspopup="true" aria-expanded="false"
-                                   aria-labelledby="blogSubMenu">DB Actions</a>
+                                   aria-labelledby="blogSubMenu">JSON</a>
 
                                 <!-- DB Actions - Submenu -->
                                 <div id="blogSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
@@ -381,8 +308,9 @@
                                 <!-- DB Actions - Submenu -->
                                 <div id="videosSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                      style="min-width: 230px;">
-                                    <a class="dropdown-item" href="{% url 'video_youtube:video-youtube' %}">Import
-                                        Youtube</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:video-youtube' %}">Import Youtube</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:video-rumble' %}">Import Rumble</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:clean-DB-movies' %}">Clean DB Movies</a>
                                 </div>
                                 <!-- End Submenu -->
                             </li>
@@ -490,17 +418,7 @@
                                 </div>
                                 <!-- End Search -->
                             </li>
-                            <li class="col pl-0 d-none d-xl-block">
-                                <a href="#" class="d-flex align-items-center" data-toggle="tooltip" data-placement="top"
-                                   title="" data-original-title="Uplode">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18"
-                                         style="fill: #6f6f6f;">
-                                        <path d="M15.2 16.2C15.2 15.6 15.2 15 15.2 14.4 17.7 14.4 21.1 14.8 22.2 13.3 22.5 12.9 22.8 12.5 23 12 23.8 9.7 22.1 7.8 20.6 7.3 20 7.1 19.4 7.2 18.7 7.2 18.6 6.4 18.3 5.7 17.9 5.1 16.9 3.3 16 2.6 13.8 2 13.2 1.8 12.2 1.7 11.5 1.9 11.1 2 10.6 2.1 10.2 2.2 9.3 2.6 8.6 3.1 8 3.7 7.7 4 7.5 4.6 7.1 4.7 6.8 4.5 6 4.5 5.7 4.6 5 4.9 4.6 5.3 4.5 6.1 4.5 6.5 4.5 6.8 4.6 7.2 3 7.6 1.2 9.5 1.9 11.8 2.1 12.4 2.4 12.9 2.8 13.3 3.9 14.8 7.2 14.4 9.8 14.4 9.8 15 9.8 15.6 9.8 16.2 8 16.2 5.1 16.4 3.8 16 2.3 15.5 1.3 14.5 0.6 13.2 0.2 12.3-0.2 10.7 0.2 9.4 0.4 8.6 1.1 7.5 1.7 7 2 6.8 2.6 6.5 2.7 6 2.8 5.8 2.8 5.2 2.9 4.9 3.3 4.1 3.9 3.4 4.7 3 5 2.9 5.3 2.8 5.7 2.7 6 2.6 6.5 2.8 6.6 2.7 7 2.4 7.4 2 7.7 1.6 8.5 1.1 9.4 0.6 10.4 0.3 11.7-0.2 13.6 0 14.8 0.4 17.4 1.3 19 2.9 20 5.5 22.4 5.5 24.2 7.4 24.8 9.3 25.3 10.7 24.8 12.6 24.3 13.5 23.6 14.6 22.5 15.5 21.2 16 19.9 16.4 17 16.2 15.2 16.2ZM13.4 10.8C13.4 13.2 13.4 15.6 13.4 18 12.8 18 12.2 18 11.6 18 11.6 15.6 11.6 13.2 11.6 10.8 10.7 10.8 9.8 10.8 9 10.8 9 10.8 9 10.7 9 10.7 9.8 9.8 10.7 9 11.5 8.1 11.8 7.9 12.1 7.3 12.6 7.2 13.4 8.1 14.2 8.9 15.1 9.8 15.4 10.1 15.9 10.4 16 10.8 15.2 10.8 14.3 10.8 13.4 10.8Z">
-                                        </path>
-                                    </svg>
-                                    <span class="ml-2 text-dark">Upload</span>
-                                </a>
-                            </li>
+
                             <li class="col pr-xl-0 px-2 px-sm-3">
                                 <!-- Unfold (Dropdown) -->
                                 <div class="hs-unfold">
@@ -552,7 +470,7 @@
     <div class="bg-gray-4000">
         <div class="container px-md-5">
             <div class="d-flex flex-wrap align-items-center pt-6 pb-3d border-bottom mb-7 border-gray-4100">
-                <a href="../home/index.html" class="mb-4 mb-md-0 mr-auto">
+                <a href="{% url 'video3domapp:Home' %}" class="mb-4 mb-md-0 mr-auto">
                     <svg version="1.1" width="103" height="40px">
                         <g style="fill: #ffffff;">
                             <path class="vodi-stream0" d="M72.8,12.5c0-2.7,0-1.8,0-4.4c0-0.9,0-1.8,0-2.8C73,2.8,74.7,1.2,77,1.2s4.1,1.8,4.2,4.2c0,1,0,2.1,0,3.1
@@ -899,257 +817,6 @@
 </div>
 <!-- End Login Modal -->
 
-<!-- Sidebar Navigation -->
-<aside id="sidebarContent" class="hs-unfold-content sidebar sidebar-left off-canvas-menu">
-    <div class="sidebar-scroller">
-        <div class="sidebar-container">
-            <div class="sidebar-footer-offset" style="padding-bottom: 7rem;">
-                <!-- Toggle Button -->
-                <div class="d-flex justify-content-end align-items-center py-2 px-4 border-bottom">
-                    <!-- Logo -->
-                    <a class="navbar-brand mr-auto" href="../home/index.html" aria-label="Vodi">
-                        <svg version="1.1" width="103" height="40px">
-                            <linearGradient id="vodi-gr1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0" style="stop-color:#2A4999"></stop>
-                                <stop offset="1" style="stop-color:#2C9CD4"></stop>
-                            </linearGradient>
-                            <g class="vodi-gr">
-                                <path class="vodi-svg0" d="M72.8,12.7c0-2.7,0-1.8,0-4.4c0-0.9,0-1.8,0-2.8C73,3,74.7,1.4,77,1.4c2.3,0,4.1,1.8,4.2,4.2c0,1,0,2.1,0,3.1
-                                    c0,6.5,0,9.4,0,15.9c0,4.7-1.7,8.8-5.6,11.5c-4.5,3.1-9.3,3.5-14.1,0.9c-4.7-2.5-7.1-6.7-7-12.1c0.1-7.8,6.3-13.6,14.1-13.2
-                                    c0.7,0,1.4,0.2,2.1,0.3C71.3,12.2,72,12.4,72.8,12.7z M67.8,19.8c-2.9,0-5.2,2.2-5.2,5c0,2.9,2.3,5.3,5.2,5.3
-                                    c2.8,0,5.2-2.4,5.2-5.2C73,22.2,70.6,19.8,67.8,19.8z
-                                    M39.9,38.6c-7.3,0-13.3-6.1-13.3-13.5c0-7.5,5.9-13.4,13.4-13.4c7.5,0,13.4,6,13.4,13.5
-                                    C53.4,32.6,47.4,38.6,39.9,38.6z M39.9,30.6c3.2,0,5.6-2.3,5.6-5.6c0-3.2-2.3-5.5-5.5-5.5c-3.2,0-5.6,2.2-5.6,5.4
-                                    C34.4,28.2,36.7,30.6,39.9,30.6z
-                                    M14.6,27c0.6-1.4,1.1-2.6,1.6-3.8c1.2-2.9,2.5-5.8,3.7-8.8c0.7-1.7,2-2.8,4-2.7c3,0,4.9,2.6,3.8,5.4
-                                    c-0.5,1.3-1.2,2.6-1.8,3.9c-2.4,5-4.9,10-7.3,15c-0.8,1.6-2,2.6-3.9,2.6c-2,0-3.3-0.8-4.2-2.6c-2.7-5.6-5.3-11.1-8-16.7
-                                    c-0.3-0.7-0.6-1.3-0.9-2c-0.8-1.8-0.3-3.7,1.1-4.8c1.5-1.2,4-1.3,5.3,0c0.7,0.6,1.2,1.5,1.6,2.3C11.3,18.8,12.9,22.7,14.6,27z
-                                    M90.9,25.1c0,3.1,0,6.2,0,9.4c0,1.9-1.2,3.4-2.9,4c-1.7,0.5-3.5,0-4.5-1.6c-0.5-0.8-0.8-1.8-0.8-2.6
-                                    c-0.1-6.1-0.1-11.3,0-17.5c0-2.2,1.5-3.9,3.5-4.2c2.1-0.3,4.1,0.9,4.7,2.9c0.1,0.5,0.2,1.1,0.2,1.6C90.9,20,90.9,22.1,90.9,25.1
-                                    C90.9,25.1,90.9,25.1,90.9,25.1z
-                                    M90.2,4.7L86,2.3c-1.3-0.8-3,0.2-3,1.7v4.8c0,1.5,1.7,2.5,3,1.7l4.2-2.4C91.5,7.4,91.5,5.5,90.2,4.7z"></path>
-                            </g>
-                        </svg>
-                    </a>
-                    <!-- End Logo -->
-                    <div class="hs-unfold">
-                        <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-soft-secondary" href="javascript:;"
-                           data-hs-unfold-options='{
-                                    "target": "#sidebarContent",
-                                    "type": "css-animation",
-                                    "animationIn": "fadeInLeft",
-                                    "animationOut": "fadeOutLeft",
-                                    "hasOverlay": "rgba(55, 125, 255, 0.1)",
-                                    "smartPositionOff": true
-                                }'>
-                            <svg width="10" height="10" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="currentColor"
-                                      d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <!-- End Toggle Button -->
-
-                <!-- Content -->
-                <div class="scrollbar sidebar-body">
-                    <div class="sidebar-content py-4">
-                        <!-- Sidebar Navbar -->
-                        <div class="">
-                            <div id="sidebarNavExample3" class="collapse show navbar-collapse">
-                                <!-- Nav Link -->
-                                <div class="sidebar-body_inner">
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" role="button" data-toggle="collapse"
-                                           aria-expanded="false" aria-controls="sidebarNav1Collapse"
-                                           data-target="#sidebarNav1Collapse">
-                                            Home
-                                        </a>
-
-                                        <div id="sidebarNav1Collapse" class="collapse"
-                                             data-parent="#sidebarNavExample3">
-                                            <div id="sidebarNav1" class="navbar-nav align-items-start flex-column">
-                                                <a class="dropdown-item" href="../home/index.html">Home v1</a>
-                                                <a class="dropdown-item" href="../home/home-v2.html">Home v2</a>
-                                                <a class="dropdown-item" href="../home/home-v3.html">Home v3</a>
-                                                <a class="dropdown-item" href="../home/home-v4.html">Home v4</a>
-                                                <a class="dropdown-item" href="../home/home-v5.html">Home v5</a>
-                                                <a class="dropdown-item" href="../home/home-v6.html">Home v6 - Vodi
-                                                    Prime (Light)</a>
-                                                <a class="dropdown-item" href="../home/home-v7.html">Home v7 - Vodi
-                                                    Prime (Dark)</a>
-                                                <a class="dropdown-item" href="../home/home-v8.html">Home v8 - Vodi
-                                                    Stream</a>
-                                                <a class="dropdown-item" href="../home/home-v9.html">Home v9 - Vodi Tube
-                                                    (Light)</a>
-                                                <a class="dropdown-item" href="../home/home-v10.html">Home v10 - Vodi
-                                                    Tube (Dark)</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" role="button" data-toggle="collapse"
-                                           aria-expanded="false" aria-controls="sidebarNav2Collapse"
-                                           data-target="#sidebarNav2Collapse">
-                                            Archive Pages
-                                        </a>
-
-                                        <div id="sidebarNav2Collapse" class="collapse"
-                                             data-parent="#sidebarNavExample3">
-                                            <div id="sidebarNav2" class="navbar-nav align-items-start flex-column">
-                                                <a class="dropdown-item" href="../archive/movies.html">Movies</a>
-                                                <a class="dropdown-item" href="../archive/tv-shows.html">TV Shows</a>
-                                                <a class="dropdown-item" href="../archive/videos.html">Videos</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" data-target="#sidebarNav2One" role="button"
-                                           data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav2One">
-                                            Single Movies
-                                        </a>
-                                        <div id="sidebarNav2One" class="navbar-nav flex-column collapse"
-                                             data-parent="#sidebarNav2">
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v1.html">Movie
-                                                v1</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v2.html">Movie
-                                                v2</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v3.html">Movie
-                                                v3</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v4.html">Movie
-                                                v4</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v5.html">Movie
-                                                v5</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v6.html">Movie
-                                                v6</a>
-                                            <a class="dropdown-item" href="../single-movies/single-movies-v7.html">Movie
-                                                v7</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" data-target="#sidebarNav2Two" role="button"
-                                           data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav2Two">
-                                            Single Videos
-                                        </a>
-                                        <div id="sidebarNav2Two" class="navbar-nav flex-column collapse"
-                                             data-parent="#sidebarNav2">
-                                            <a class="dropdown-item" href="../single-video/single-video-v1.html">Video
-                                                v1</a>
-                                            <a class="dropdown-item" href="../single-video/single-video-v2.html">Video
-                                                v2</a>
-                                            <a class="dropdown-item" href="../single-video/single-video-v3.html">Video
-                                                v3</a>
-                                            <a class="dropdown-item" href="../single-video/single-video-v4.html">Video
-                                                v4</a>
-                                            <a class="dropdown-item" href="../single-video/single-video-v5.html">Video
-                                                v5</a>
-                                            <a class="dropdown-item" href="../single-video/single-video-v6.html">Video
-                                                v6</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" role="button" data-toggle="collapse"
-                                           aria-expanded="false" aria-controls="sidebarNav3Collapse"
-                                           data-target="#sidebarNav3Collapse">
-                                            Single Episodes
-                                        </a>
-
-                                        <div id="sidebarNav3Collapse" class="collapse"
-                                             data-parent="#sidebarNavExample3">
-                                            <div id="sidebarNav3" class="navbar-nav align-items-start flex-column">
-                                                <a class="dropdown-item"
-                                                   href="../single-episodes/single-episodes-v1.html">Episode v1</a>
-                                                <a class="dropdown-item"
-                                                   href="../single-episodes/single-episodes-v2.html">Episode v2</a>
-                                                <a class="dropdown-item"
-                                                   href="../single-episodes/single-episodes-v3.html">Episode v3</a>
-                                                <a class="dropdown-item"
-                                                   href="../single-episodes/single-episodes-v4.html">Episode v4</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" data-target="#sidebarNav3One" role="button"
-                                           data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav3One">
-                                            Other Pages
-                                        </a>
-                                        <div id="sidebarNav3One" class="navbar-nav flex-column collapse"
-                                             data-parent="#sidebarNav3">
-                                            <a class="dropdown-item" href="../other/landing-v1.html">Landing v1</a>
-                                            <a class="dropdown-item" href="../other/landing-v2.html">Landing v2</a>
-                                            <a class="dropdown-item" href="../other/coming-soon.html">Coming Soon</a>
-                                            <a class="dropdown-item" href="../single-tv-show/single-tv-show.html">Single
-                                                TV Show</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" data-target="#sidebarNav3Two" role="button"
-                                           data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav3Two">
-                                            Blog Pages
-                                        </a>
-                                        <div id="sidebarNav3Two" class="navbar-nav flex-column collapse"
-                                             data-parent="#sidebarNav3">
-                                            <a class="dropdown-item" href="../blog/blog.html">Blog</a>
-                                            <a class="dropdown-item" href="../blog/blog-single.html">Single Blog</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" role="button" data-toggle="collapse"
-                                           aria-expanded="false" aria-controls="sidebarNav4Collapse"
-                                           data-target="#sidebarNav4Collapse">
-                                            Static Pages
-                                        </a>
-
-                                        <div id="sidebarNav4Collapse" class="collapse"
-                                             data-parent="#sidebarNavExample3">
-                                            <div id="sidebarNav4" class="navbar-nav align-items-start flex-column">
-                                                <a class="dropdown-item" href="../static/contact.html">Contact Us</a>
-                                                <a class="dropdown-item" href="../static/404.html">404</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="position-relative">
-                                        <a class="dropdown-nav-link dropdown-toggle dropdown-toggle-collapse"
-                                           href="javascript:;" data-target="#sidebarNav4One" role="button"
-                                           data-toggle="collapse" aria-expanded="false" aria-controls="sidebarNav4One">
-                                            Docs
-                                        </a>
-                                        <div id="sidebarNav4One" class="navbar-nav flex-column collapse"
-                                             data-parent="#sidebarNav4">
-                                            <a class="dropdown-item"
-                                               href="../../documentation/index.html">Documentation</a>
-                                            <a class="dropdown-item" href="../../snippets/index.html">Snippets</a>
-                                        </div>
-                                    </div>
-                                    <!-- End Nav Link -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Sidebar Navbar -->
-                    </div>
-                </div>
-                <!-- End Content -->
-            </div>
-        </div>
-    </div>
-</aside>
-<!-- End Sidebar Navigation -->
 <!-- ========== END SECONDARY CONTENTS ========== -->
 
 <!-- Go to Top -->

@@ -9,6 +9,34 @@ Python 3.11.5
 
 ---
 
+## Todo
+- [x] get videos sur Rumble  
+- [ ] get videos sur Odysee --> IMPOSSIBLE
+- [x] ajout de createurs Youtube 
+- [x] ajout de createurs Rumble 
+
+
+- [ ] Les differents modes d'affichage 
+- [ ] Connexion allauth `Google`  
+- [ ] Mettre en prod  
+- [ ] Fiverr - Correctifs template  
+- [ ] Page de visualisation de video  
+- [ ] page de sons .. paymeacoffee, paypal,  
+- [ ] creer une adresse email 3dom
+- [ ] revoir le footer
+- [ ] trouver un studio video
+- [ ] paginator
+- [ ] opacite sur l'image d'accueil
+- [ ] 
+
+Search
+https://odysee.com/$/search?q=vivre%20sainement
+Createur
+https://odysee.com/@Vivresainement:f
+Video
+https://odysee.com/@Vivresainement:f/suicides:2
+
+
 ## Liens Youtube
 - [x] https://www.youtube.com/watch?v=rVBBZKPjzgY
 - [x]   

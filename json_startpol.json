@@ -1,0 +1,45 @@
+[
+  {
+    '@context': 'http://schema.org',
+    '@type': 'VideoObject',
+    'name': 'STRATPOL 🔴 Bulletin N°105 (25 octobre 2022) ? ⬇️ Sommaire en description ⬇️',
+    'playerType': 'HTML5',
+    'description': "Titre original : Bulletin N°105. Macron : la sale guerre, le général Hiver. 27.10.2022. Crédit Video : STRATPOL - Centre d'Analyse Politico-Stratégique, @STRATPOL, 25 octobre 2022 -- 👉 Liens pour suiv",
+    'thumbnailUrl': 'https://sp.rmbl.ws/s8/1/p/E/i/o/pEiog.qR4e-small-STRATPOL-Bulletin-N105-25-o.jpg',
+    'uploadDate': '2022-10-27T10:11:37+00:00',
+    'duration': 'PT00H36M37S',
+    'embedUrl': 'https://rumble.com/embed/v1nit3v/',
+    'url': 'https://rumble.com/v1q4yvj-stratpol-bulletin-n105-25-octobre-2022-sommaire-en-description-.html',
+    'interactionStatistic': {
+      '@type': 'InteractionCounter',
+      'interactionType': {
+        '@type': 'http://schema.org/WatchAction'
+      },
+      'userInteractionCount': 3382
+    },
+    'width': 1280,
+    'height': 720,
+    'videoQuality': 'Full HD'
+  },
+  {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    'url': 'https://rumble.com/',
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': 'https://rumble.com/search/video?q={search}',
+      'query-input': 'required name=search'
+    }
+  },
+  {
+    '@context': 'http://schema.org',
+    '@type': 'Organization',
+    'name': 'Rumble',
+    'url': 'https://rumble.com/',
+    'logo': 'https://rumble.com/i/rumble_logo_back.png',
+    'sameAs': [
+      'https://www.facebook.com/rumblevideo/',
+      'https://twitter.com/rumblevideo'
+    ]
+  }
+]
