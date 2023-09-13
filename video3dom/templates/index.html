@@ -15,26 +15,26 @@
                     "infinite": true,
                     "asNavFor": "#sliderSyncingThumb"
                 }'>
-                {% for movie in movies %}
-                {% if forloop.counter <= 5 %}
-                <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url({{ movie.image_url }});">
+                {% for movie_top5 in movies_top5 %}
+
+                <div class="bg-img-hero d-flex align-items-center min-h-676rem slider-gradient" style="background-image: url({{ movie_top5.image_url }});">
                     <div class="container">
                         <div class="mx-3 mx-md-5  col-xl-5 px-0">
-                            <h1 class="display-3 mb-3"><a href="../single-movies/single-movies-v2.html" class="h-w-primary">{{ movie.title|truncatechars:48}}</a></h1>
+                            <h1 class="display-3 mb-3"><a href="../single-movies/single-movies-v2.html" class="h-w-primary">{{ movie_top5.title|truncatechars:48}}</a></h1>
                             <div class="mb-4d">
                                 <ul class="list-unstyled nav nav-meta nav-meta__white">
-                                    <li class="">{{movie.file_date}}</li>
-                                    <li class="">{{movie.creator.get_category_display}}</li>
-                                    <li class=""><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank">{{movie.creator}}</a></li>
+                                    <li class="">{{movie_top5.file_date}}</li>
+                                    <li class="">{{movie_top5.creator.get_category_display}}</li>
+                                    <li class=""><a href="https://www.youtube.com/{{movie_top5.creator.youtube_name}}" target="_blank">{{movie_top5.creator}}</a></li>
                                 </ul>
                             </div>
                             <div class="d-md-flex">
-                                <a href="{% url 'video3domapp:Visionnage' movie.uuid %}" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0">VISIONNER</a>
+                                <a href="{% url 'video3domapp:Visionnage' movie_top5.uuid %}" class="btn btn-primary px-6 py-3d btn-sm mb-3 mb-md-0">VISIONNER</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endif %}
+
                 {% endfor %}
             </div>
 
@@ -57,12 +57,10 @@
                             }
                         }]
                     }'>
-                    {% for movie in movies %}
-                        {% if forloop.counter <= 5 %}
+                    {% for movie_top5 in movies_top5 %}
                             <div class="my-1d" style="cursor: pointer;">
-                                <img class="img-fluid" style="width:204px; height:120px;" src="{{ movie.image_url }}" alt="Image Description">
+                                <img class="img-fluid" style="width:204px; height:120px;" src="{{ movie_top5.image_url }}" alt="Image Description">
                             </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -77,10 +75,7 @@
                         <div class="text-center tab-nav__v1">
                             <ul class="nav mb-2 mb-md-7" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-one-code-example2-tab" data-toggle="pill" href="#pills-one-code-example2" role="tab" aria-controls="pills-one-code-example2" aria-selected="true">Cette semaine</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-two-code-example2-tab" data-toggle="pill" href="#pills-two-code-example2" role="tab" aria-controls="pills-two-code-example2" aria-selected="false">Le mois dernier</a>
+                                    <a class="nav-link active" id="pills-one-code-example2-tab" data-toggle="pill" href="" role="tab" aria-controls="pills-one-code-example2" aria-selected="true">Les videos à ne pas manquer sur les réseaux .. </a>
                                 </li>
                             </ul>
                         </div>
@@ -93,41 +88,14 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="pills-one-code-example2" role="tabpanel" aria-labelledby="pills-one-code-example2-tab">
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-4 mb-3 mb-md-5">
-                                        <header class="max-w-370 mt-auto mb-xl-8 title-dash">
-                                            <h3 class="display-7 mb-3 font-weight-semi-bold">Popular TV Series Right Now</h3>
-                                        </header>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8 mb-md-5">
-                                        <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 mx-n2">
-
-                                            {% for movie in movies %}
-                                                {% if forloop.counter > 5 and forloop.counter <= 9 %}
-                                                    <div class="col px-2 mb-5 mb-md-0">
-                                                        <div class="product">
-                                                            <div class="product-image mb-2">
-                                                                <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="{{ movie.image_url }}" alt="Image Description"></a>
-                                                            </div>
-                                                            <div class="product-meta font-size-12 mb-1">
-                                                                <span><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
-                                                            </div>
-                                                            <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">{{ movie.file_tags }}</a></div>
-                                                        </div>
-                                                    </div>
-                                                {% endif %}
-                                            {% endfor %}
-
-                                        </div>
-                                    </div>
 
                                     <div class="col">
                                         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 mx-n2">
                                             {% for movie in movies %}
-                                                {% if forloop.counter > 9 %}
                                                     <div class="col px-2 mb-5 mb-md-5">
                                                         <div class="product">
                                                             <div class="product-image mb-2">
-                                                                <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="{{ movie.image_url }}" alt="Image Description"></a>
+                                                                <a href="{% url 'video3domapp:Visionnage' movie.uuid %}" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="{{ movie.image_url }}" alt="Image Description"></a>
                                                             </div>
                                                             <div class="product-meta font-size-12 mb-1">
                                                                 <span><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
@@ -135,7 +103,6 @@
                                                             <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">{{ movie.file_tags }}</a></div>
                                                         </div>
                                                     </div>
-                                                {% endif %}
                                             {% endfor %}
 
                                         </div>
@@ -143,335 +110,33 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="pills-two-code-example2" role="tabpanel" aria-labelledby="pills-two-code-example2-tab">
-                                <div class="row">
-                                    <div class="col-md-5 col-lg-4 mb-3 mb-md-5">
-                                        <header class="max-w-370 mt-auto mb-xl-8 title-dash">
-                                            <h4 class="display-7 mb-3 font-weight-semi-bold">Popular TV Series Right Now</h4>
-                                        </header>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8 mb-md-5">
-                                        <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 mx-n2">
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Unbreakable Kimmy Schmidt</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">House of cards</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 mx-n2">
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Unbreakable Kimmy Schmidt</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">House of cards</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-three-code-example2" role="tabpanel" aria-labelledby="pills-three-code-example2-tab">
-                                <div class="row">
-                                    <div class="col-md-5 col-lg-4 mb-3 mb-md-5">
-                                        <header class="max-w-370 mt-auto mb-xl-8 title-dash">
-                                            <h3 class="display-7 mb-3 font-weight-semi-bold">Popular TV Series Right Now</h3>
-                                        </header>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8 mb-md-5">
-                                        <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 mx-n2">
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Unbreakable Kimmy Schmidt</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">House of cards</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 mx-n2">
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Unbreakable Kimmy Schmidt</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-lg-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">House of cards</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">2020</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">Chicago Med</a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col px-2 mb-5 mb-md-0 d-md-none d-xl-block">
-                                                <div class="product">
-                                                    <div class="product-image mb-2">
-                                                        <a href="../single-episodes/single-episodes-v4.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/222x126" alt="Image Description"></a>
-                                                    </div>
-                                                    <div class="product-meta font-size-12 mb-1">
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Action</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Comedy</a></span>
-                                                        <span><a href="../single-episodes/single-episodes-v4.html" class="h-g-primary">Mystery</a></span>
-                                                    </div>
-                                                    <div class="product-title font-weight-bold font-size-1"><a href="#">The Last Man on the earth</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- End Tab Content -->
                     </div>
                 </div>
+
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <div class="font-secondary font-size-1 font-weight-normal text-gray-3200 text-center text-md-left mb-3 mb-md-0">Page {{ movies.number }} sur {{ movies.paginator.num_pages }}</div>
+                    <nav aria-label="Page bottom navigation">
+                        <ul class="pagination custom_pagination justify-content-center justify-content-md-start mb-0">
+                            {% if movies.has_previous %}
+                                <a class="page-link" href="?page={{ movies.previous_page_number }}">Page précédente<i class="fas fa-long-arrow-alt-left ml-2 font-size-11"></i></a>
+                            {% endif%}
+                            {% for page in movies.paginator.page_range %}
+                                {% if movies.number == page %}
+                                    <li class="page-item active"><a class="page-link" href="?page={{ page }}" >{{ page }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if movies.has_next %}
+                                <a class="page-link" href="?page={{ movies.next_page_number }}">Page suivante<i class="fas fa-long-arrow-alt-right ml-2 font-size-11"></i></a>
+                            {% endif%}
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
         </section>
 

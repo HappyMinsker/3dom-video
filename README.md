@@ -10,31 +10,33 @@ Python 3.11.5
 ---
 
 ## Todo
-- [x] get videos sur Rumble  
-- [ ] get videos sur Odysee --> IMPOSSIBLE
-- [x] ajout de createurs Youtube 
-- [x] ajout de createurs Rumble 
+- [x] get videos sur `Rumble`  
+- [ ] get videos sur `Odysee` --> IMPOSSIBLE
+- [x] ajout de createurs `Youtube` 
+- [x] ajout de createurs `Rumble` 
 
-
-- [ ] Les differents modes d'affichage 
 - [ ] Connexion allauth `Google`  
-- [ ] Mettre en prod  
-- [ ] Fiverr - Correctifs template  
-- [ ] Page de visualisation de video  
-- [ ] page de sons .. paymeacoffee, paypal,  
-- [ ] creer une adresse email 3dom
-- [ ] revoir le footer
-- [ ] trouver un studio video
-- [ ] paginator
-- [ ] opacite sur l'image d'accueil
+- [x] Page de visualisation de video  
+- [ ] creer une adresse `email` 3dom
+- [x] paginator
+- [ ] commentaire alternatif a la main .. au niveau de createur de contenu 
+- [ ] 404 
+- [x] controle `is_superuser`
 - [ ] 
+- [ ] Mettre en `prod`  
 
-Search
-https://odysee.com/$/search?q=vivre%20sainement
-Createur
-https://odysee.com/@Vivresainement:f
-Video
-https://odysee.com/@Vivresainement:f/suicides:2
+
+## Versions ulterieures
+- [ ] Les differents modes d'affichage 
+- [ ] trouver un `studio video`
+
+
+## A sous traiter
+- [ ] `Fiverr` - Correctifs template  
+- [ ] opacite sur l'image d'accueil
+- [ ] page de dons .. `paymeacoffee`, `paypal`,  
+- [ ] revoir le footer
+
 
 
 ## Liens Youtube
@@ -64,17 +66,7 @@ https://odysee.com/@Vivresainement:f/suicides:2
 | Ratio   |   2,840 |   1,762 |   1,772 |
 
 
-## Data Google
-- [x] Cle API : AIzaSyCO487FSltOzZTdqmoY3sc1KcPAMqZXGV8
-          
-      Use this key in your application by passing it with the key=API_KEY parameter.
 
-- [x] Project ID: dom-youtube-398307
-- [x] Project name: 3dom Youtube
-- [x] Name of your OAuth 2.0 client : 3dom Youtube
-
-- [x] Client ID: 948379921087-pt95t7ppnaup6qmv3hdi35sjnf4skvr1.apps.googleusercontent.com
-- [x] Client secret: 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
 
 C:\Users\OMEN\PycharmProjects\3dom-video\venv\Scripts\python.exe C:\Users\OMEN\PycharmProjects\3dom-video\app_test.
 py -2XW85xVrSk

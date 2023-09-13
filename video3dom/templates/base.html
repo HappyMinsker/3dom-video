@@ -306,12 +306,14 @@
                                    aria-labelledby="blogSubMenu">DB Actions</a>
 
                                 <!-- DB Actions - Submenu -->
+                                {% if request.user.is_superuser %}
                                 <div id="videosSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                      style="min-width: 230px;">
                                     <a class="dropdown-item" href="{% url 'video_import:video-youtube' %}">Import Youtube</a>
                                     <a class="dropdown-item" href="{% url 'video_import:video-rumble' %}">Import Rumble</a>
                                     <a class="dropdown-item" href="{% url 'video_import:clean-DB-movies' %}">Clean DB Movies</a>
                                 </div>
+                                {% endif %}
                                 <!-- End Submenu -->
                             </li>
                             <!-- Get Videos -->
