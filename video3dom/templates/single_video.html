@@ -28,14 +28,14 @@
                     </div>
 
                     <div class="font-size-12 mb-4">
-                        <span class="d-inline-flex text-gray-1300 align-items-center mr-3">Publié le {{movie.date_published}}</span>
+                        <span class="d-inline-flex text-gray-1300 align-items-center mr-3">Publié le {% firstof movie.date_published movie.file_date %}</span>
                         <span class="d-inline-flex text-gray-1300 align-items-center mr-3">| par {{movie.creator.name}}</span>
                     </div>
 
 
                     <div class="collapse" id="collapseExample">
                         <div class="card card-body shadow-none p-0 mb-2">
-                            <p>TAGS: {{movie.file_tags}}</p>
+                            <p>{% firstof movie.description movie.file_tags %}</p>
                         </div>
                     </div>
 

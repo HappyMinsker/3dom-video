@@ -9,6 +9,9 @@ class Home(View):
     NOMBRE_PAGES = 24
 
     def get(self, request, *args, **kwargs):
+        print('*******************************')
+        print(self.request.user)
+        print('*******************************')
         creators = Creator.objects.all().order_by('name')
         movies_top5 = Movie.objects.all().order_by('-file_date', '-created_in_3dom')[:5]
         movies = Movie.objects.all().order_by('-file_date', '-created_in_3dom')[5:]

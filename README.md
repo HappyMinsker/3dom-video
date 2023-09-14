@@ -22,8 +22,10 @@ Python 3.11.5
 - [ ] commentaire alternatif a la main .. au niveau de createur de contenu 
 - [ ] 404 
 - [x] controle `is_superuser`
-- [ ] 
+- [x] 
 - [ ] Mettre en `prod`  
+- [ ] Pub 350*277 : Creer votre propre canal ! Contactez nous.
+- [ ] personnaliser interface admin + recherche
 
 
 ## Versions ulterieures
@@ -99,9 +101,9 @@ py -2XW85xVrSk
 
 
 ## Cleaning
-- [ ] Supprimmer les fichiers `ORG`.
-- [ ] Supprimmer les fichiers `LMC`.
-- [ ] 
+- [ ] Supprimer les fichiers `ORG`.
+- [ ] Supprimer les fichiers `LMC`.
+- [x] 
 
 
 

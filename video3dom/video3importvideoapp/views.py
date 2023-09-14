@@ -22,7 +22,7 @@ def import_videos_rumble(request):
         soup = BeautifulSoup(page.content, 'html.parser')
         #
         result = soup.find_all("li", {"class": "video-listing-entry"})
-        for r in result[:2]:
+        for r in result[:8]:
             extract_url = r.select_one('a', {"class": "video-item--a"}).attrs['href']
             ## Ici controle : Deja en DB
             id_rumble = extract_url[1:].split('-')[0]

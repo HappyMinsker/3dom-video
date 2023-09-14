@@ -100,7 +100,7 @@
                                                             <div class="product-meta font-size-12 mb-1">
                                                                 <span><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
                                                             </div>
-                                                            <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">{{ movie.file_tags }}</a></div>
+                                                            <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">{% firstof movie.description movie.file_tags|safe %}</a></div>
                                                         </div>
                                                     </div>
                                             {% endfor %}

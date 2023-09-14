@@ -138,7 +138,7 @@
                             <li class="hs-has-mega-menu navbar-nav-item">
                                 <a id="homeMegaMenu"
                                    class="hs-mega-menu-invoker nav-link nav-link-toggle font-secondary"
-                                   href="javascript:;" aria-haspopup="true" aria-expanded="false">Accueil</a>
+                                   href="javascript:;" aria-haspopup="true" aria-expanded="false">Présentation</a>
 
                                 <!-- Home - Mega Menu -->
                                 <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="homeMegaMenu">
@@ -281,6 +281,7 @@
                             <!-- End Movies -->
 
                             <!-- DB Actions -->
+                            {% if request.user.is_staff %}
                             <li class="hs-has-sub-menu navbar-nav-item">
                                 <a id="blogMegaMenu"
                                    class="hs-mega-menu-invoker nav-link nav-link-toggle font-secondary"
@@ -296,9 +297,11 @@
                                 </div>
                                 <!-- End Submenu -->
                             </li>
+                            {% endif %}
                             <!-- DB Actions -->
 
                             <!-- Get Videos -->
+                            {% if request.user.is_staff %}
                             <li class="hs-has-sub-menu navbar-nav-item">
                                 <a id="videosMegaMenu"
                                    class="hs-mega-menu-invoker nav-link nav-link-toggle font-secondary"
@@ -306,16 +309,15 @@
                                    aria-labelledby="blogSubMenu">DB Actions</a>
 
                                 <!-- DB Actions - Submenu -->
-                                {% if request.user.is_superuser %}
                                 <div id="videosSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                      style="min-width: 230px;">
                                     <a class="dropdown-item" href="{% url 'video_import:video-youtube' %}">Import Youtube</a>
                                     <a class="dropdown-item" href="{% url 'video_import:video-rumble' %}">Import Rumble</a>
                                     <a class="dropdown-item" href="{% url 'video_import:clean-DB-movies' %}">Clean DB Movies</a>
                                 </div>
-                                {% endif %}
                                 <!-- End Submenu -->
                             </li>
+                            {% endif %}
                             <!-- Get Videos -->
 
                         </ul>
