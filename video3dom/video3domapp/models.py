@@ -12,6 +12,7 @@ CATEGORY_CHOICES = (
 
 CHANNEL_CHOICES = (
     ('youtube', 'Youtube'),
+    ('local', 'Classique'),
     ('odysee', 'Odysee'),
     ('rumble', 'Rumble'),
 )
@@ -41,6 +42,7 @@ class Creator(models.Model):
     odysee_id = models.CharField(max_length=40, null=True, blank=True)
     rumble_name = models.CharField(max_length=60, null=True, blank=True)
     rumble_id = models.CharField(max_length=40, null=True, blank=True)
+    alternate_comment = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name} sur {self.channel}'

@@ -1,17 +1,19 @@
+{% load socialaccount %}
+
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Title -->
-    <title>Home Page | Vodi - Responsive Website Template</title>
+    <title>3dom | Videos</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-<!--    <link rel="shortcut icon" href="../../favicon.ico">-->
+    <!--    <link rel="shortcut icon" href="../../favicon.ico">-->
     <link rel="shortcut icon" type="image/png" href="{% static '3dom_icon.ico' %}"/>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700;800&display=swap"
@@ -65,68 +67,8 @@
 
                 <!-- Logo -->
                 <a class="navbar-brand w-auto mr-xl-5 mr-wd-8" href="{% url 'video3domapp:Home' %}" aria-label="Vodi">
-                    <!--                        <svg version="1.1" width="103" height="40px">-->
-                    <!--                            <linearGradient id="vodi-gr" x1="0%" y1="0%" x2="100%" y2="0%">-->
-                    <!--                                <stop offset="0" style="stop-color:#2A4999"></stop>-->
-                    <!--                                <stop offset="1" style="stop-color:#2C9CD4"></stop>-->
-                    <!--                            </linearGradient>-->
-                    <!--                            <g class="vodi-gr">-->
-                    <!--                                <path class="vodi-svg0" d="M72.8,12.7c0-2.7,0-1.8,0-4.4c0-0.9,0-1.8,0-2.8C73,3,74.7,1.4,77,1.4c2.3,0,4.1,1.8,4.2,4.2c0,1,0,2.1,0,3.1-->
-                    <!--                                c0,6.5,0,9.4,0,15.9c0,4.7-1.7,8.8-5.6,11.5c-4.5,3.1-9.3,3.5-14.1,0.9c-4.7-2.5-7.1-6.7-7-12.1c0.1-7.8,6.3-13.6,14.1-13.2-->
-                    <!--                                c0.7,0,1.4,0.2,2.1,0.3C71.3,12.2,72,12.4,72.8,12.7z M67.8,19.8c-2.9,0-5.2,2.2-5.2,5c0,2.9,2.3,5.3,5.2,5.3-->
-                    <!--                                c2.8,0,5.2-2.4,5.2-5.2C73,22.2,70.6,19.8,67.8,19.8z-->
-                    <!--                                M39.9,38.6c-7.3,0-13.3-6.1-13.3-13.5c0-7.5,5.9-13.4,13.4-13.4c7.5,0,13.4,6,13.4,13.5-->
-                    <!--                                C53.4,32.6,47.4,38.6,39.9,38.6z M39.9,30.6c3.2,0,5.6-2.3,5.6-5.6c0-3.2-2.3-5.5-5.5-5.5c-3.2,0-5.6,2.2-5.6,5.4-->
-                    <!--                                C34.4,28.2,36.7,30.6,39.9,30.6z-->
-                    <!--                                M14.6,27c0.6-1.4,1.1-2.6,1.6-3.8c1.2-2.9,2.5-5.8,3.7-8.8c0.7-1.7,2-2.8,4-2.7c3,0,4.9,2.6,3.8,5.4-->
-                    <!--                                c-0.5,1.3-1.2,2.6-1.8,3.9c-2.4,5-4.9,10-7.3,15c-0.8,1.6-2,2.6-3.9,2.6c-2,0-3.3-0.8-4.2-2.6c-2.7-5.6-5.3-11.1-8-16.7-->
-                    <!--                                c-0.3-0.7-0.6-1.3-0.9-2c-0.8-1.8-0.3-3.7,1.1-4.8c1.5-1.2,4-1.3,5.3,0c0.7,0.6,1.2,1.5,1.6,2.3C11.3,18.8,12.9,22.7,14.6,27z-->
-                    <!--                                M90.9,25.1c0,3.1,0,6.2,0,9.4c0,1.9-1.2,3.4-2.9,4c-1.7,0.5-3.5,0-4.5-1.6c-0.5-0.8-0.8-1.8-0.8-2.6-->
-                    <!--                                c-0.1-6.1-0.1-11.3,0-17.5c0-2.2,1.5-3.9,3.5-4.2c2.1-0.3,4.1,0.9,4.7,2.9c0.1,0.5,0.2,1.1,0.2,1.6C90.9,20,90.9,22.1,90.9,25.1-->
-                    <!--                                C90.9,25.1,90.9,25.1,90.9,25.1z-->
-                    <!--                                M90.2,4.7L86,2.3c-1.3-0.8-3,0.2-3,1.7v4.8c0,1.5,1.7,2.5,3,1.7l4.2-2.4C91.5,7.4,91.5,5.5,90.2,4.7z"></path>-->
-                    <!--                            </g>-->
-                    <!--                        </svg>-->
-                    <svg width="140" height="66px" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="111.4050018310547 5.479997253417963 277.1899963378906 139.04000549316407"
-                         style="background: none;" preserveAspectRatio="xMidYMid">
-                        <defs>
-                            <filter id="editing-stripe-bk" filterUnits="userSpaceOnUse" x="-100%" y="-100%" width="300%"
-                                    height="300%">
-                                <feFlood flood-color="#f7d8b4" result="flood1"></feFlood>
-                                <feFlood flood-color="#fff" flood-opacity="0.5" result="flood2"></feFlood>
-                                <feImage
-                                        xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAwcHgiIGhlaWdodD0iMTAwMHB4Ij48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjQiIGhlaWdodD0iNCI+PHBhdGggZD0iTSAtNCAtNCBMIDggOCBNIC04IC00IEwgNCA4IE0gLTQgLTggTCA4IDQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+"
-                                        x="0" y="0" width="2000" height="1000" result="image"></feImage>
-                                <feTile in="image" result="tile"></feTile>
-                                <feComposite operator="in" in="flood1" in2="tile" result="tile2"></feComposite>
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"></feGaussianBlur>
-                                <feComposite operator="in" in="tile2" in2="blur" result="cloud"></feComposite>
-                                <feMorphology operator="dilate" radius="2" in="SourceAlpha"
-                                              result="dilate"></feMorphology>
-                                <feComposite operator="in" in="flood2" in2="dilate" result="base"></feComposite>
-                                <feMerge>
-                                    <feMergeNode in="cloud"></feMergeNode>
-                                    <feMergeNode in="base"></feMergeNode>
-                                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <g filter="url(#editing-stripe-bk)">
-                            <g transform="translate(155.44001919031143, 100.79500007629395)">
-                                <path d="M31.10-25.41L31.10-25.41Q33.09-24.90 34.91-23.33L34.91-23.33L34.91-23.33Q36.74-21.76 37.92-19.39L37.92-19.39L37.92-19.39Q39.10-17.02 39.10-14.14L39.10-14.14L39.10-14.14Q39.10-7.10 34.08-3.10L34.08-3.10L34.08-3.10Q29.06 0.90 19.20 0.90L19.20 0.90L19.20 0.90Q14.53 0.90 9.86-0.16L9.86-0.16L9.86-0.16Q5.18-1.22 1.54-2.75L1.54-2.75L1.54-16.38L1.54-16.38Q5.50-14.66 9.76-13.57L9.76-13.57L9.76-13.57Q14.02-12.48 17.86-12.48L17.86-12.48L17.86-12.48Q20.54-12.48 21.79-13.31L21.79-13.31L21.79-13.31Q23.04-14.14 23.04-16.06L23.04-16.06L23.04-16.06Q23.04-19.78 18.56-19.78L18.56-19.78L13.95-19.78L13.95-30.27L17.54-30.27L17.54-30.27Q21.76-30.27 21.76-33.86L21.76-33.86L21.76-33.86Q21.76-37.31 17.54-37.31L17.54-37.31L17.54-37.31Q14.46-37.31 11.14-35.87L11.14-35.87L11.14-35.87Q7.81-34.43 4.67-32.13L4.67-32.13L0.90-45.76L0.90-45.76Q4.80-47.81 9.79-49.25L9.79-49.25L9.79-49.25Q14.78-50.69 19.84-50.69L19.84-50.69L19.84-50.69Q28.67-50.69 33.41-46.98L33.41-46.98L33.41-46.98Q38.14-43.26 38.14-36.48L38.14-36.48L38.14-36.48Q38.14-32.26 36.16-29.54L36.16-29.54L36.16-29.54Q34.18-26.82 31.10-25.41L31.10-25.41ZM53.63 0.90L53.63 0.90Q47.10 0.90 43.81-3.97L43.81-3.97L43.81-3.97Q40.51-8.83 40.51-17.79L40.51-17.79L40.51-17.79Q40.51-26.75 43.81-31.62L43.81-31.62L43.81-31.62Q47.10-36.48 53.63-36.48L53.63-36.48L53.63-36.48Q56.90-36.48 59.42-34.88L59.42-34.88L59.42-34.88Q61.95-33.28 63.55-31.23L63.55-31.23L63.55-39.30L59.78-39.30L59.78-49.79L78.27-49.79L78.27-10.50L81.09-10.50L81.09 0L63.55 0L63.55-4.35L63.55-4.35Q61.95-2.30 59.42-0.70L59.42-0.70L59.42-0.70Q56.90 0.90 53.63 0.90L53.63 0.90ZM59.84-10.50L59.84-10.50Q61.70-10.50 62.62-11.49L62.62-11.49L62.62-11.49Q63.55-12.48 63.55-14.59L63.55-14.59L63.55-20.99L63.55-20.99Q63.55-23.10 62.62-24.10L62.62-24.10L62.62-24.10Q61.70-25.09 59.84-25.09L59.84-25.09L59.84-25.09Q57.98-25.09 57.06-24.10L57.06-24.10L57.06-24.10Q56.13-23.10 56.13-20.99L56.13-20.99L56.13-14.59L56.13-14.59Q56.13-12.48 57.06-11.49L57.06-11.49L57.06-11.49Q57.98-10.50 59.84-10.50L59.84-10.50ZM102.21 0.90L102.21 0.90Q93.12 0.90 88.00-3.87L88.00-3.87L88.00-3.87Q82.88-8.64 82.88-17.79L82.88-17.79L82.88-17.79Q82.88-26.94 88.00-31.71L88.00-31.71L88.00-31.71Q93.12-36.48 102.21-36.48L102.21-36.48L102.21-36.48Q111.42-36.48 116.48-31.65L116.48-31.65L116.48-31.65Q121.54-26.82 121.54-17.79L121.54-17.79L121.54-17.79Q121.54-8.64 116.42-3.87L116.42-3.87L116.42-3.87Q111.30 0.90 102.21 0.90L102.21 0.90ZM102.21-10.50L102.21-10.50Q104.06-10.50 104.99-11.49L104.99-11.49L104.99-11.49Q105.92-12.48 105.92-14.59L105.92-14.59L105.92-20.99L105.92-20.99Q105.92-23.10 104.99-24.10L104.99-24.10L104.99-24.10Q104.06-25.09 102.21-25.09L102.21-25.09L102.21-25.09Q100.35-25.09 99.42-24.10L99.42-24.10L99.42-24.10Q98.50-23.10 98.50-20.99L98.50-20.99L98.50-14.59L98.50-14.59Q98.50-12.48 99.42-11.49L99.42-11.49L99.42-11.49Q100.35-10.50 102.21-10.50L102.21-10.50ZM185.41-10.50L188.22-10.50L188.22 0L168 0L168-10.50L170.69-10.50L170.69-20.99L170.69-20.99Q170.69-23.10 169.79-24.10L169.79-24.10L169.79-24.10Q168.90-25.09 167.10-25.09L167.10-25.09L167.10-25.09Q163.26-25.09 163.26-20.99L163.26-20.99L163.26-10.50L165.95-10.50L165.95 0L145.86 0L145.86-10.50L148.54-10.50L148.54-20.99L148.54-20.99Q148.54-23.10 147.65-24.10L147.65-24.10L147.65-24.10Q146.75-25.09 144.96-25.09L144.96-25.09L144.96-25.09Q141.12-25.09 141.12-20.99L141.12-20.99L141.12-10.50L143.81-10.50L143.81 0L123.58 0L123.58-10.50L126.40-10.50L126.40-25.09L123.58-25.09L123.58-35.58L141.12-35.58L141.12-30.59L141.12-30.59Q145.73-36.48 152.64-36.48L152.64-36.48L152.64-36.48Q156.54-36.48 159.01-34.66L159.01-34.66L159.01-34.66Q161.47-32.83 162.50-29.50L162.50-29.50L162.50-29.50Q164.80-32.83 167.78-34.62L167.78-34.62L167.78-34.62Q170.75-36.42 174.78-36.42L174.78-36.42L174.78-36.42Q180.10-36.42 182.75-33.09L182.75-33.09L182.75-33.09Q185.41-29.76 185.41-23.94L185.41-23.94L185.41-10.50Z"
-                                      fill="#edb870"></path>
-                            </g>
-                        </g>
-                        <style>text {
-                          font-size: 64px;
-                          font-family: Arial Black;
-                          dominant-baseline: central;
-                          text-anchor: middle;
-                        }
-                        </style>
-                    </svg>
+                    {% include 'partials/_logo_svg.html' %}
+
                 </a>
                 <!-- End Logo -->
 
@@ -147,7 +89,8 @@
                                             <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
                                                 <a href="../home/index.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="{% static 'assets/img/mode/Mode1.jpg' %}" alt="Image Description">
+                                                         src="{% static 'assets/img/mode/Mode1.jpg' %}"
+                                                         alt="Image Description">
                                                     <div class="h-g1-primary font-size-13 font-weight-bold">Classique
                                                     </div>
                                                 </a>
@@ -156,7 +99,8 @@
                                             <div class="col-md-6 col-lg-3 col-xl border-right border-w-lg-d-0">
                                                 <a href="../home/home-v9.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="{% static 'assets/img/mode/Mode2.jpg' %}" alt="Image Description">
+                                                         src="{% static 'assets/img/mode/Mode2.jpg' %}"
+                                                         alt="Image Description">
                                                     <div class="h-g1-primary font-size-13 font-weight-bold">
                                                         Créateurs
                                                     </div>
@@ -166,7 +110,8 @@
                                             <div class="col-md-6 col-lg-3 col-xl">
                                                 <a href="../home/home-v10.html" class="h-g1-primary d-block mb-4">
                                                     <img class="d-none d-md-block img-fluid mb-3 rounded-sm shadow-2"
-                                                         src="{% static 'assets/img/mode/Mode3.jpg' %}" alt="Image Description">
+                                                         src="{% static 'assets/img/mode/Mode3.jpg' %}"
+                                                         alt="Image Description">
                                                     <div class="h-g1-primary font-size-13 font-weight-bold">
                                                         Dissident
                                                     </div>
@@ -192,41 +137,41 @@
                                             <div class="row row-cols-md-3 mx-lg-n5">
                                                 <div class="col-md px-lg-5 mb-4 mb-md-0 border-right">
                                                     <div class="font-size-14 text-dark font-weight-bold mb-3">
-                                                        Movie of the Day
+                                                        Film du jour
                                                     </div>
                                                     <div class="row mx-n2 product">
                                                         <div class="col-auto">
                                                             <div class="product-image mb-2">
                                                                 <a href="../single-movies/single-movies-v1.html"
                                                                    class="d-inline-block position-relative stretched-link">
-                                                                    <img class="img-fluid"
-                                                                         src="https://placehold.it/174x260"
+                                                                    <img class="img-fluid" style="max-height: 260px"
+                                                                         src="media/covers/9NfaVaXJG2vOWYQ7H7Zalr8G7D5.webp"
                                                                          alt="Image Description">
                                                                 </a>
                                                             </div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="product-meta font-size-12 mb-1">
-                                                                <span><a href="#" class="h-g-primary">2020</a></span>
+                                                                <span><a href="#" class="h-g-primary">1973</a></span>
                                                                 <span><a href="#" class="h-g-primary">Action</a></span>
-                                                                <span><a href="#" class="h-g-primary">Comedy</a></span>
-                                                                <span><a href="#" class="h-g-primary">Mystery</a></span>
+                                                                <span><a href="#" class="h-g-primary">Western</a></span>
                                                             </div>
                                                             <div class="product-title font-weight-bold font-size-1 mb-2d">
-                                                                <a href="../single-movies/single-movies-v1.html">The Big
-                                                                    Sick</a></div>
+                                                                <a href="../single-movies/single-movies-v1.html">Mon
+                                                                    nom est personne
+                                                                </a></div>
                                                             <p class="text-gray-7100 font-size-13 line-clamp-5">
-                                                                Pakistan-born comedian Kumail Nanjiani and grad student
-                                                                Emily Gardner fall in love but struggle as their
-                                                                cultures clash. When Emily contracts a mysterious
-                                                                illness.</p>
+                                                                En 1895, une bande de 150 tueurs, "La Horde sauvage",
+                                                                fait régner la terreur à travers plusieurs Etats.
+                                                                Sullivan (Jean Martin), ex-aventurier sans crupule,
+                                                                tueur à gages, chercheur d'or et voleur, propriétaire
+                                                                d'une mine d'or, s'est associé avec la Horde pour
+                                                                écouler l'or volé par les bandits en faisant croire que
+                                                                leur butin provient officiellement de la mine. </p>
                                                             <div class="d-flex">
                                                                 <a href="../single-movies/single-movies-v1.html"
                                                                    class="font-size-14 font-secondary font-weight-bold mr-4">Watch
                                                                     Now</a>
-                                                                <a href="../single-movies/single-movies-v1.html"
-                                                                   class="font-size-14 font-secondary font-weight-bold h-g1-primary">+
-                                                                    Playlist</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -239,10 +184,10 @@
 
                                                     <ul class="column-count-2 v2 list-unstyled mb-0">
                                                         {% for creator in creators %}
-                                                            <li class="py-1">
-                                                                <a class="h-b-primary  py-1 font-size-14"
-                                                                   href="../single-movies/single-movies-v2.html">{{ creator.name }}</a>
-                                                            </li>
+                                                        <li class="py-1">
+                                                            <a class="h-b-primary  py-1 font-size-14"
+                                                               href="../single-movies/single-movies-v2.html">{{creator.name }}</a>
+                                                        </li>
                                                         {% endfor %}
                                                     </ul>
                                                 </div>
@@ -311,9 +256,12 @@
                                 <!-- DB Actions - Submenu -->
                                 <div id="videosSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                      style="min-width: 230px;">
-                                    <a class="dropdown-item" href="{% url 'video_import:video-youtube' %}">Import Youtube</a>
-                                    <a class="dropdown-item" href="{% url 'video_import:video-rumble' %}">Import Rumble</a>
-                                    <a class="dropdown-item" href="{% url 'video_import:clean-DB-movies' %}">Clean DB Movies</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:video-youtube' %}">Import
+                                        Youtube</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:video-rumble' %}">Import
+                                        Rumble</a>
+                                    <a class="dropdown-item" href="{% url 'video_import:clean-DB-movies' %}">Clean DB
+                                        Movies</a>
                                 </div>
                                 <!-- End Submenu -->
                             </li>
@@ -433,19 +381,25 @@
                                                 "type": "css-animation",
                                                 "event": "click"
                                             }'>
+                                        {% if user.socialaccount_set.all.0.get_avatar_url %}
+                                        <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}">
+                                        {% else %}
                                         <svg width="32px" height="32px">
                                             <image x="0px" y="0px" width="32px" height="32px"
                                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACB1BMVEW7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu7vLu3t7eys7KztLO4uLi6u7q0tbSxsrG2t7awsrC7vLu8vLy1trW8vby1tbWysrK6urq3uLe5urm9vr24ubitrq2wsbCsrazV1dXs7Oz29vb39/fw8PDe3t6vsK/v7+/////5+vnLy8urrKuxsbHGx8aur67k5OT4+Pizs7P9/f3R0tGurq7Oz87j4+OsrqzU1NTo6OiusK7+/v7k5eT4+fjGyMa7u7v6+vrMzMyrq6u+vr7Ky8ri4uLt7e3u7u7m5+bT1NOwsLC+v77Q0NDe397f39/T09O/v7/FxsX5+fn09PS9vb37+/v09fTNzs3g4ODh4uHX2Nf8/PzY2djIyMjIycjU1dTl5uXx8fHm5ubV1tVi3+TsAAAAUnRSTlMADleWxOHwxphZESftmiuDiBvN0iAq8TAW9xzX340dI5ymCPj9VV+lydDl5/P05srRnqdjCvr+EKCqipTd5Pb7IfI31NmLkAQvojIVn+PLoWIYYNJBTgAAAAFiS0dEca8HXOIAAAAHdElNRQfjBQECDwMxTbKCAAACG0lEQVQ4y21T90PTQBQ+RKpY3FisExcuEHEvFPdeXLikJLnakjbVgjESSEutqIiKIo66R90L/SNtbzTp+H66e9/37r17A4ACqqZUT63xeGqmTa+dAcrhra7rhEIXQl2iFPDMnFXKz0bdoqzIBIosdqM5RfTceYKKZRdwUJhf7/AL6iD35lAU6Gvg/ELfJe4eCgd62FGT/IuYYDGkPI5E9RASYiK9anAJyw8yFx1evhLv7buKYwoJqMCleX4ZUskVG+iaSXC936ICFS3PCRoHyItKUOw1OQZtYsMDKwBYuUqgEaxEgTeTQxFiE1dXgTWdlFdxyhGYN9LM2gQaJVoB46aLN4ctWg19LVjH/nDrtltwJ42IFa4HG8JUMFLpBTm8ETSHeA53K+SAmkELE8jWqMPfY7/ICzYFWHfcdbhv40KIVok3Z+RBH6XHHj7ivYWbQZvOL+N6+vHEk6fPnoejCh8dfQuo5SHkjB158fLV6zdvg3aGj4e6FWzbTkqtida74SQN8T4xGBM0UuodOwHYlW+WZosT7jok1HROgfXduW7WI1HRoviDWYT4eEzLtdubH4g98GOmZ8wsQVY2NLiXjtQ+Q/pkliE+ZLTzod/fb1bA5wMdfKwbDn4p57/6DzmL0XH42/diOvXjiLdot47+TLgkqdFfx46XLOeJtpbffyaT2Wxy8u8//8lTFfb7dNOZ1rMeX/u58xcuOtb/keQ/CDzeyUsAAAAASUVORK5CYII=">
                                             </image>
                                         </svg>
+                                        {% endif %}
                                     </a>
 
                                     <div id="basicDropdownHover"
                                          class="hs-unfold-content dropdown-menu my-account-dropdown">
                                         <!-- Modal Trigger -->
                                         {% if request.user.is_authenticated %}
-                                        <a class="dropdown-item" href="{% url 'account_logout' %}">Deconnexion</a>
+                                        <a class="dropdown-item" href="{% url 'logout' %}">Deconnexion</a>
                                         {% else %}
+<!--                                        <a class="dropdown-item" href="{% url 'account_login' %}"><img src="{% static 'assets/img/Google_SignIn.png' %}"-->
+<!--                                                alt="Google SignIn"></a>-->
                                         <a class="dropdown-item" href="{% url 'account_login' %}">Connexion</a>
                                         <a class="dropdown-item" href="{% url 'account_signup' %}">Enregistrement
                                             {% endif %}
@@ -475,25 +429,26 @@
         <div class="container px-md-5">
             <div class="d-flex flex-wrap align-items-center pt-6 pb-3d border-bottom mb-7 border-gray-4100">
                 <a href="{% url 'video3domapp:Home' %}" class="mb-4 mb-md-0 mr-auto">
-                    <svg version="1.1" width="103" height="40px">
-                        <g style="fill: #ffffff;">
-                            <path class="vodi-stream0" d="M72.8,12.5c0-2.7,0-1.8,0-4.4c0-0.9,0-1.8,0-2.8C73,2.8,74.7,1.2,77,1.2s4.1,1.8,4.2,4.2c0,1,0,2.1,0,3.1
-                                c0,6.5,0,9.4,0,15.9c0,4.7-1.7,8.8-5.6,11.5c-4.5,3.1-9.3,3.5-14.1,0.9c-4.7-2.5-7.1-6.7-7-12.1c0.1-7.8,6.3-13.6,14.1-13.2
-                                c0.7,0,1.4,0.2,2.1,0.3C71.3,12,72,12.2,72.8,12.5z M67.8,19.6c-2.9,0-5.2,2.2-5.2,5c0,2.9,2.3,5.3,5.2,5.3c2.8,0,5.2-2.4,5.2-5.2
-                                C73,22,70.6,19.6,67.8,19.6z"></path>
-                            <path class="vodi-stream0" d="M39.9,38.4c-7.3,0-13.3-6.1-13.3-13.5c0-7.5,5.9-13.4,13.4-13.4s13.4,6,13.4,13.5
-                                C53.4,32.4,47.4,38.4,39.9,38.4z M39.9,30.4c3.2,0,5.6-2.3,5.6-5.6c0-3.2-2.3-5.5-5.5-5.5s-5.6,2.2-5.6,5.4
-                                C34.4,28,36.7,30.4,39.9,30.4z"></path>
-                            <path class="vodi-stream0" d="M14.6,26.8c0.6-1.4,1.1-2.6,1.6-3.8c1.2-2.9,2.5-5.8,3.7-8.8c0.7-1.7,2-2.8,4-2.7c3,0,4.9,2.6,3.8,5.4
-                                c-0.5,1.3-1.2,2.6-1.8,3.9c-2.4,5-4.9,10-7.3,15c-0.8,1.6-2,2.6-3.9,2.6c-2,0-3.3-0.8-4.2-2.6c-2.7-5.6-5.3-11.1-8-16.7
-                                c-0.3-0.7-0.6-1.3-0.9-2c-0.8-1.8-0.3-3.7,1.1-4.8c1.5-1.2,4-1.3,5.3,0c0.7,0.6,1.2,1.5,1.6,2.3C11.3,18.6,12.9,22.5,14.6,26.8z"></path>
-                            <path class="vodi-stream0" d="M90.9,24.9c0,3.1,0,6.2,0,9.4c0,1.9-1.2,3.4-2.9,4c-1.7,0.5-3.5,0-4.5-1.6c-0.5-0.8-0.8-1.8-0.8-2.6
-                                c-0.1-6.1-0.1-11.3,0-17.5c0-2.2,1.5-3.9,3.5-4.2c2.1-0.3,4.1,0.9,4.7,2.9c0.1,0.5,0.2,1.1,0.2,1.6C90.9,19.8,90.9,21.9,90.9,24.9
-                                L90.9,24.9z"></path>
-                            <path style="fill: #51C9F0;"
-                                  d="M90.2,4.5L86,2.1c-1.3-0.8-3,0.2-3,1.7v4.8c0,1.5,1.7,2.5,3,1.7l4.2-2.4C91.5,7.2,91.5,5.3,90.2,4.5z"></path>
-                        </g>
-                    </svg>
+                    {% include 'partials/_logo_svg.html' %}
+                    <!--                    <svg version="1.1" width="103" height="40px">-->
+                    <!--                        <g style="fill: #ffffff;">-->
+                    <!--                            <path class="vodi-stream0" d="M72.8,12.5c0-2.7,0-1.8,0-4.4c0-0.9,0-1.8,0-2.8C73,2.8,74.7,1.2,77,1.2s4.1,1.8,4.2,4.2c0,1,0,2.1,0,3.1-->
+                    <!--                                c0,6.5,0,9.4,0,15.9c0,4.7-1.7,8.8-5.6,11.5c-4.5,3.1-9.3,3.5-14.1,0.9c-4.7-2.5-7.1-6.7-7-12.1c0.1-7.8,6.3-13.6,14.1-13.2-->
+                    <!--                                c0.7,0,1.4,0.2,2.1,0.3C71.3,12,72,12.2,72.8,12.5z M67.8,19.6c-2.9,0-5.2,2.2-5.2,5c0,2.9,2.3,5.3,5.2,5.3c2.8,0,5.2-2.4,5.2-5.2-->
+                    <!--                                C73,22,70.6,19.6,67.8,19.6z"></path>-->
+                    <!--                            <path class="vodi-stream0" d="M39.9,38.4c-7.3,0-13.3-6.1-13.3-13.5c0-7.5,5.9-13.4,13.4-13.4s13.4,6,13.4,13.5-->
+                    <!--                                C53.4,32.4,47.4,38.4,39.9,38.4z M39.9,30.4c3.2,0,5.6-2.3,5.6-5.6c0-3.2-2.3-5.5-5.5-5.5s-5.6,2.2-5.6,5.4-->
+                    <!--                                C34.4,28,36.7,30.4,39.9,30.4z"></path>-->
+                    <!--                            <path class="vodi-stream0" d="M14.6,26.8c0.6-1.4,1.1-2.6,1.6-3.8c1.2-2.9,2.5-5.8,3.7-8.8c0.7-1.7,2-2.8,4-2.7c3,0,4.9,2.6,3.8,5.4-->
+                    <!--                                c-0.5,1.3-1.2,2.6-1.8,3.9c-2.4,5-4.9,10-7.3,15c-0.8,1.6-2,2.6-3.9,2.6c-2,0-3.3-0.8-4.2-2.6c-2.7-5.6-5.3-11.1-8-16.7-->
+                    <!--                                c-0.3-0.7-0.6-1.3-0.9-2c-0.8-1.8-0.3-3.7,1.1-4.8c1.5-1.2,4-1.3,5.3,0c0.7,0.6,1.2,1.5,1.6,2.3C11.3,18.6,12.9,22.5,14.6,26.8z"></path>-->
+                    <!--                            <path class="vodi-stream0" d="M90.9,24.9c0,3.1,0,6.2,0,9.4c0,1.9-1.2,3.4-2.9,4c-1.7,0.5-3.5,0-4.5-1.6c-0.5-0.8-0.8-1.8-0.8-2.6-->
+                    <!--                                c-0.1-6.1-0.1-11.3,0-17.5c0-2.2,1.5-3.9,3.5-4.2c2.1-0.3,4.1,0.9,4.7,2.9c0.1,0.5,0.2,1.1,0.2,1.6C90.9,19.8,90.9,21.9,90.9,24.9-->
+                    <!--                                L90.9,24.9z"></path>-->
+                    <!--                            <path style="fill: #51C9F0;"-->
+                    <!--                                  d="M90.2,4.5L86,2.1c-1.3-0.8-3,0.2-3,1.7v4.8c0,1.5,1.7,2.5,3,1.7l4.2-2.4C91.5,7.2,91.5,5.3,90.2,4.5z"></path>-->
+                    <!--                        </g>-->
+                    <!--                    </svg>-->
                 </a>
                 <ul class="list-unstyled mx-n3 mb-0 d-flex flex-wrap align-items-center">
                     <li class="px-3">
@@ -617,8 +572,11 @@
     <div class="bg-gray-4300">
         <div class="container px-md-5">
             <div class="text-center d-md-flex flex-wrap align-items-center py-3">
-                <div class="font-size-13 text-gray-1300 mb-2 mb-md-0">Copyright © 2020, Vodi. All Rights Reserved</div>
-                <a href="../static/contact.html" class="font-size-13 h-g-white ml-md-auto">Privacy Policy</a>
+                <div class="font-size-13 text-gray-1300 mb-2 mb-md-0">Copyright © 2023, 3dom. Tous droits réservés
+                    .
+                </div>
+                <a href="../static/contact.html" class="font-size-13 h-g-white ml-md-auto">politique de
+                    confidentialité.</a>
             </div>
         </div>
     </div>
@@ -690,7 +648,8 @@
                             <span class="divider divider-xs divider-text">OR</span>
                         </div>
 
-                        <a class="btn btn-sm btn-ghost-secondary btn-block mb-2" href="#">
+                        <a class="btn btn-sm btn-ghost-secondary btn-block mb-2"
+                           href="{% provider_login_url 'google' %}">
                                 <span class="d-flex justify-content-center align-items-center">
                                     <i class="fab fa-google mr-2"></i>
                                     Sign In with Google

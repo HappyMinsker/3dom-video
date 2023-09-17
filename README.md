@@ -1,11 +1,13 @@
 # 3dom-video
-### 3dom project - Hebergement et lecture de videos
+### 3dom project - Aggregation, hebergement et lecture de videos
 
 ---
 
 Développé avec `PyCharm 2023.2.1 (Community Edition)`
 
 Python 3.11.5
+
+python manage.py runscript video3domapp/views2.py
 
 ---
 
@@ -14,50 +16,60 @@ Python 3.11.5
 - [ ] get videos sur `Odysee` --> IMPOSSIBLE
 - [x] ajout de createurs `Youtube` 
 - [x] ajout de createurs `Rumble` 
-
-- [ ] Connexion allauth `Google`  
 - [x] Page de visualisation de video  
-- [ ] creer une adresse `email` 3dom
 - [x] paginator
-- [ ] commentaire alternatif a la main .. au niveau de createur de contenu 
-- [ ] 404 
 - [x] controle `is_superuser`
-- [x] 
+- [x] personnaliser interface admin + recherche
+- [x] Connexion allauth `Google`  
+- [x] commentaire alternatif a la main .. au niveau de créateur de contenu 
+- [x] Partials: Svg, .... 
+- [ ] 404 
+- [ ] enviro 
+- [ ] logging / telegram  
+
+                           
+## Cleaning / MEP
+- [ ] Supprimer les fichiers `ORG`.
+- [ ] Supprimer les fichiers `LMC`.
 - [ ] Mettre en `prod`  
-- [ ] Pub 350*277 : Creer votre propre canal ! Contactez nous.
-- [ ] personnaliser interface admin + recherche
+
 
 
 ## Versions ulterieures
-- [ ] Les differents modes d'affichage 
-- [ ] trouver un `studio video`
+- [ ] Les différents modes d'affichage 
+- [ ] Trouver un `studio video`
+- [ ] Afficher uniquement `is published` 
+- [ ] Connexion allauth `github`  
+- [ ] Connexion allauth `twitter`  
+- [ ] Pub 350*277 : Creer votre propre canal ! Contactez nous.
+- [ ] Créer une adresse `email` 3dom
+- [ ] Recherche de film ou de tag 
+- [ ] Icone carree "3" bords arrondis.
 
 
 ## A sous traiter
 - [ ] `Fiverr` - Correctifs template  
-- [ ] opacite sur l'image d'accueil
-- [ ] page de dons .. `paymeacoffee`, `paypal`,  
-- [ ] revoir le footer
-
+- [ ] Opacité sur l'image d'accueil
+- [ ] Page de dons ... `paymeacoffee`, `paypal`,  
+- [ ] Revoir le footer
 
 
 ## Liens Youtube
 - [x] https://www.youtube.com/watch?v=rVBBZKPjzgY
-- [x]   
+- [x] https://www.youtube.com/watch?v=l-_dRvHEUA8
 - [x] https://www.youtube.com/watch?v=kRp1Z2JhnzY  
 - [x] https://www.youtube.com/watch?v=E_3sMko5GLo  
 - [x] https://www.youtube.com/watch?v=ySOKQ9DFeFQ  
-- [x]   
-- [x]   
-- [x]   
-- [x] https://www.youtube.com/watch?v=G8P3qBkhKC8  
+- [x] https://www.youtube.com/watch?v=i5dZktGrZ9s
+- [x] https://www.youtube.com/watch?v=ckXzBHb5caA
+- [x] https://www.youtube.com/watch?v=G8P3qBkhKC8
 
 
 ## Elements HTML
 - [x] Couleur bleue de `WATCH NOW` #24BAEF    
-- [x]   
 - [x] pip install youtube3  
 - [x]   
+
 
 ## Ratio Images
 
@@ -67,11 +79,6 @@ Python 3.11.5
 | Hauteur |     676 |     126 |     127 |
 | Ratio   |   2,840 |   1,762 |   1,772 |
 
-
-
-
-C:\Users\OMEN\PycharmProjects\3dom-video\venv\Scripts\python.exe C:\Users\OMEN\PycharmProjects\3dom-video\app_test.
-py -2XW85xVrSk
 
 
 ---
@@ -94,16 +101,7 @@ py -2XW85xVrSk
             videoEl.setAttribute('src', `http://localhost:8000/media/${movie_data[video_param].file}`)
         </script>
 
-                           
-## ToDO
-- [ ] Icone carree "3".
 
-
-
-## Cleaning
-- [ ] Supprimer les fichiers `ORG`.
-- [ ] Supprimer les fichiers `LMC`.
-- [x] 
 
 
 

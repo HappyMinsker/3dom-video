@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent   # C:\Users\OMEN\PycharmProjects\3dom-video\video3dom
+BASE_DIR = Path(__file__).resolve().parent.parent  # C:\Users\OMEN\PycharmProjects\3dom-video\video3dom
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,7 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITE_ID = 1
+SITE_ID = 2
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'actions_DB',
     'video3domapp',
     'video3importvideoapp',
+    'oauth_app',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -82,7 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'video3dom.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -92,7 +92,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -112,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -125,13 +123,23 @@ USE_I18N = True
 USE_TZ = True
 
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-    # `allauth` specific authentication methods, such as login by email
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 
+SOCIALACCOUNT_LOGIN_ON_GET = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -139,15 +147,14 @@ AUTHENTICATION_BACKENDS = [
 AUTH_USER_MODEL = 'video3domapp.CustomUser'
 
 STATIC_URL = 'static/'
-# STATIC_ROOT =
+# STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static/'
+    BASE_DIR / 'static'
 ]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
-
 
 # ACCOUNT_UNIQUE_EMAIL = True
 
@@ -156,8 +163,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_REQUIRED = False
 
-LOGIN_URL = 'login'
+# LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'video3domapp:Home'
+LOGOUT_REDIRECT_URL = 'video3domapp:Home'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

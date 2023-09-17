@@ -9,19 +9,21 @@ class Home(View):
     NOMBRE_PAGES = 24
 
     def get(self, request, *args, **kwargs):
-        print('*******************************')
-        print(self.request.user)
-        print('*******************************')
+        # print('*******************************')
+        # print(dir(self.request.user.MultipleObjectsReturned))
+        # print('*******************************')
         creators = Creator.objects.all().order_by('name')
         movies_top5 = Movie.objects.all().order_by('-file_date', '-created_in_3dom')[:5]
         movies = Movie.objects.all().order_by('-file_date', '-created_in_3dom')[5:]
         paginator = Paginator(movies, Home.NOMBRE_PAGES)
         page_number = request.GET.get("page")
         page_obj = paginator.get_page(page_number)
+
         context = {
             'movies_top5': movies_top5,
             'movies': page_obj,
-            'creators': creators}
+            'creators': creators,
+            'alt_comments': ['A voir ...', 'Culturel']}
         return render(request, "index.html", context=context)
 
 

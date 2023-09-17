@@ -1,6 +1,6 @@
 import requests, json, re
 
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 
 from py_youtube import Search, Data
 from bs4 import BeautifulSoup
@@ -8,26 +8,22 @@ from bs4 import BeautifulSoup
 from video3domapp.models import Creator, Movie
 
 
-def import_videos_rumble(request):
+def get_videos_rumble():
     pattern = '\d{2}'
     creators = Creator.objects.filter(channel="rumble")
     for creator in creators:
-        print('*********** creator ***************')
-        print(creator)
-        print(creator.rumble_id)
-        print(f"https://rumble.com/user/{creator.rumble_id}")
-        print('*********** creator ***************')
         # Beautifulsoup
         page = requests.get(f"https://rumble.com/user/{creator.rumble_id}")
         soup = BeautifulSoup(page.content, 'html.parser')
         #
         result = soup.find_all("li", {"class": "video-listing-entry"})
+        # On prend les 8 derniers
         for r in result[:8]:
             extract_url = r.select_one('a', {"class": "video-item--a"}).attrs['href']
             ## Ici controle : Deja en DB
             id_rumble = extract_url[1:].split('-')[0]
             if not Movie.objects.filter(channel_external_id=id_rumble).exists():
-                print(extract_url)
+                # print(extract_url)
                 www_url = f"https://rumble.com{extract_url}"
 
                 page_detail = requests.get(www_url)
@@ -35,16 +31,8 @@ def import_videos_rumble(request):
                 soup = BeautifulSoup(plain_text, 'html.parser')
                 js = json.loads(soup.find("script", type="application/ld+json").text)
 
-                print(js[0]['name'])
-                print(js[0]['description'])
-                print(js[0]['thumbnailUrl'])
-                print(js[0]['uploadDate'][:10])
                 matches = re.findall(pattern, js[0]['duration'])
                 duration = '{}:{}:{}'.format(matches[0], matches[1], matches[2])
-                print(js[0]['duration'])
-                print(js[0]['embedUrl'])
-                print(js[0]['url'])
-                print('*' * 60)
                 Movie.objects.create(title=js[0]['name'],
                                      description=js[0]['description'],
                                      image_url=js[0]['thumbnailUrl'],
@@ -53,10 +41,14 @@ def import_videos_rumble(request):
                                      file_duration=duration,
                                      creator=creator,
                                      channel_external_id=id_rumble)
+
+
+def import_videos_rumble(request):
+    get_videos_rumble()
     return redirect("video3domapp:Home")
 
 
-def import_videos_youtube(request):
+def get_videos_youtube():
     creators = Creator.objects.filter(channel="youtube")
 
     # Pour chaque créateur, recherche de ses 5 dernieres videos
@@ -76,6 +68,10 @@ def import_videos_youtube(request):
                                      file_tags=file_tags,
                                      creator=creator,
                                      channel_external_id=id_youtube)
+
+
+def import_videos_youtube(request):
+    get_videos_youtube()
     return redirect("video3domapp:Home")
 
 
@@ -84,3 +80,5 @@ def db_clean_movies(request):
     Movie.objects.all().delete()
     print('************ clean')
     return redirect("video3domapp:Home")
+
+

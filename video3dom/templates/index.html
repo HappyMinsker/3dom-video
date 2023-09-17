@@ -95,12 +95,26 @@
                                                     <div class="col px-2 mb-5 mb-md-5">
                                                         <div class="product">
                                                             <div class="product-image mb-2">
-                                                                <a href="{% url 'video3domapp:Visionnage' movie.uuid %}" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="{{ movie.image_url }}" alt="Image Description"></a>
+                                                                <a
+                                                                        href="{% url 'video3domapp:Visionnage' movie.uuid %}"
+                                                                        class="d-inline-block position-relative stretched-link">
+                                                                    <img class="img-fluid" {% if movie.image %}
+                                                                         src="{{ movie.image.url }}"
+                                                                         {% else %}
+                                                                         src="{{ movie.image_url }}"
+                                                                         {% endif %}
+                                                                         alt="Image Description"></a>
                                                             </div>
                                                             <div class="product-meta font-size-12 mb-1">
                                                                 <span><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
                                                             </div>
-                                                            <div class="product-title font-weight-bold font-size-1"><a href="../single-episodes/single-episodes-v4.html">{% firstof movie.description movie.file_tags|safe %}</a></div>
+                                                            <div class="product-title font-weight-bold font-size-1"><a href="https://www.youtube.com/{{movie.creator.youtube_name}}">
+                                                                {% if movie.creator.alternate_comment %}
+                                                                    {{ alt_comments|random }}
+                                                                {% else %}
+                                                                    {% firstof movie.description movie.file_tags|safe %}
+                                                                {% endif %}
+                                                                </a></div>
                                                         </div>
                                                     </div>
                                             {% endfor %}
