@@ -16,13 +16,19 @@
         <div class="row mb-4">
             <div class="col-md-8 col-xl-9 mb-4">
                 <div class="position-relative min-h-270rem mb-2d mr-xl-3">
+                    {% if request.user.is_authenticated %}
                     {% if movie.creator.channel == 'youtube' %}
                         <iframe class="position-absolute w-100 h-lg-down-100 position-xl-relative top-0 bottom-0 w-100" height="620" src="https://www.youtube.com/embed/{{movie.channel_external_id}}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     {% elif movie.creator.channel == 'local' %}
                         <video
-                                class="position-absolute w-100 h-lg-down-100 position-xl-relative top-0 bottom-0 w-100" height="420" controls><source src="{{movie.file.url}}" type="video/mp4"></video>
+                                class="position-absolute w-100 h-lg-down-100 position-xl-relative top-0 bottom-0 w-100" height="620" controls><source src="{{movie.file.url}}" type="video/mp4"></video>
                     {% else %}
                         <iframe class="position-absolute w-100 h-lg-down-100 position-xl-relative top-0 bottom-0 w-100" height="620" src="{{movie.video_url}}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {% endif %}
+                    {% else %}
+                        <div height="620">
+                            <p>Veuillez vous identifier avant de visionner une vidéo.</p>
+                        </div>
                     {% endif %}
                 </div>
                 <div class="mr-xl-3">
@@ -70,7 +76,7 @@
                         <div class="col">
                             <div class="mx-xl-2d">
                                 <div class="product_title font-size-13 font-weight-semi-bold mb-1d">
-                                    <a href="{% url 'video3domapp:Visionnage' m.uuid %}" class="">{{ m.title }}</a>
+              <a href="{% url 'video3domapp:Visionnage' m.uuid %}" class="">{{ m.title|striptags }}</a>
                                 </div>
 
                                 <div class="product-meta dot font-size-12 mb-1">

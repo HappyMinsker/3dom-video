@@ -25,7 +25,13 @@
                                 <ul class="list-unstyled nav nav-meta nav-meta__white">
                                     <li class="">{{movie_top5.file_date}}</li>
                                     <li class="">{{movie_top5.creator.get_category_display}}</li>
-                                    <li class=""><a href="https://www.youtube.com/{{movie_top5.creator.youtube_name}}" target="_blank">{{movie_top5.creator}}</a></li>
+                                    {% if movie_top5.creator.youtube_name %}
+                                        <li class=""><a href="https://www.youtube.com/{{movie_top5.creator.youtube_name}}" target="_blank">{{movie_top5.creator}}</a></li>
+                                    {% elif movie_top5.creator.rumble_id %}
+                                        <li class=""><a href="https://rumble.com/user/{{movie_top5.creator.rumble_id}}" target="_blank">{{movie_top5.creator}}</a></li>
+                                    {% else %}
+                                        <li class=""><a href="#" target="_blank">{{movie_top5.creator}}</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                             <div class="d-md-flex">
@@ -106,7 +112,15 @@
                                                                          alt="Image Description"></a>
                                                             </div>
                                                             <div class="product-meta font-size-12 mb-1">
+
+                                                            {% if movie.creator.youtube_name %}
                                                                 <span><a href="https://www.youtube.com/{{movie.creator.youtube_name}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
+                                                            {% elif movie.creator.rumble_id %}
+                                                                <span><a href="https://rumble.com/user/{{movie.creator.rumble_id}}" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
+                                                            {% else %}
+                                                                <span><a href="#" target="_blank" class="h-g-primary">{{ movie.creator }}</a></span>
+                                                            {% endif %}
+
                                                             </div>
                                                             <div class="product-title font-weight-bold font-size-1"><a href="https://www.youtube.com/{{movie.creator.youtube_name}}">
                                                                 {% if movie.creator.alternate_comment %}

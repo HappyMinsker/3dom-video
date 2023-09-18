@@ -43,6 +43,7 @@ class Creator(models.Model):
     rumble_name = models.CharField(max_length=60, null=True, blank=True)
     rumble_id = models.CharField(max_length=40, null=True, blank=True)
     alternate_comment = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f'{self.name} sur {self.channel}'

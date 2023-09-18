@@ -9,6 +9,7 @@ app_name = "main"
 urlpatterns = ([
     path('admin/', admin.site.urls),
     path('', include('video3domapp.urls', namespace='video3domapp')),
+    path('accounts/', include('utils.urls')),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view(), name='logout'),
     path('actions-DB/', include('actions_DB.urls')),

@@ -7,7 +7,6 @@ Développé avec `PyCharm 2023.2.1 (Community Edition)`
 
 Python 3.11.5
 
-python manage.py runscript video3domapp/views2.py
 
 ---
 
@@ -23,9 +22,9 @@ python manage.py runscript video3domapp/views2.py
 - [x] Connexion allauth `Google`  
 - [x] commentaire alternatif a la main .. au niveau de créateur de contenu 
 - [x] Partials: Svg, .... 
-- [ ] 404 
-- [ ] enviro 
-- [ ] logging / telegram  
+- [x] 404 
+- [x] enviro 
+- [x] logging / telegram  
 
                            
 ## Cleaning / MEP
@@ -45,6 +44,8 @@ python manage.py runscript video3domapp/views2.py
 - [ ] Créer une adresse `email` 3dom
 - [ ] Recherche de film ou de tag 
 - [ ] Icone carree "3" bords arrondis.
+- [ ] logging / telegram  
+- [ ] Faire le menage dans les extensions
 
 
 ## A sous traiter
@@ -67,7 +68,7 @@ python manage.py runscript video3domapp/views2.py
 
 ## Elements HTML
 - [x] Couleur bleue de `WATCH NOW` #24BAEF    
-- [x] pip install youtube3  
+- [x] Pip install youtube3  
 - [x]   
 
 
